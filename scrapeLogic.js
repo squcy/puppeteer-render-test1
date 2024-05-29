@@ -30,7 +30,7 @@ const scrapeLogic = async (res) => {
     await page.waitForSelector(searchResultSelector);
     await page.click(searchResultSelector);
 
-    const searchResultSelector2 = "div > div > div > div > a";
+    const searchResultSelector2 = "div.min-h-screen.pb-5 > div > div > div > a";
     await page.waitForSelector(searchResultSelector2 , {timeout: 120000} );
     //await page.click(searchResultSelector);
 

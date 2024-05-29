@@ -28,7 +28,7 @@ const scrapeLogic = async (res) => {
     // Wait and click on first result
     let searchResultSelector = "div:nth-child(2) > div > div.w-28.p-2.mx-2.my-2.text-center.border.rounded-lg.cursor-pointer.bit64 > div:nth-child(2)";
     await page.waitForSelector(searchResultSelector);
-   // await page.click(searchResultSelector);
+    await page.click(searchResultSelector);
 
  //   const searchResultSelector2 = "div > div > div > div > a";
   //  await page.waitForSelector(searchResultSelector2 , {timeout: 120000} );
@@ -40,14 +40,14 @@ const scrapeLogic = async (res) => {
 //    );
   // const fullTitle = await searchResultSelector.evaluate((el) => el.textContent);
 
-let x =  await page.evaluate(() => {
+/*let x =  await page.evaluate(() => {
  const element = document.querySelector("div:nth-child(2) > div > div.w-28.p-2.mx-2.my-2.text-center.border.rounded-lg.cursor-pointer.bit64 > div:nth-child(2)").textContent
  return element
-});
+});*/
 
     
     // Print the full title
-    const logStatement = `The title of this blog post is ${x}`;
+    const logStatement = `The title of this blog post is`;
     console.log(logStatement);
     res.send(logStatement);
   

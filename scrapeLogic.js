@@ -26,11 +26,11 @@ const scrapeLogic = async (res) => {
    // await page.type(".search-box__input", "automate beyond recorder");
 
     // Wait and click on first result
-    const searchResultSelector = ".search-box__link";
+    const searchResultSelector = "div:nth-child(2) > div > div.w-28.p-2.mx-2.my-2.text-center.border.rounded-lg.cursor-pointer.bit64";
     await page.waitForSelector(searchResultSelector);
     await page.click(searchResultSelector);
 
-    const searchResultSelector2 = ".search-box__link";
+    const searchResultSelector2 = "div > div > div > div > a";
     await page.waitForSelector(searchResultSelector2);
     //await page.click(searchResultSelector);
 
@@ -38,7 +38,7 @@ const scrapeLogic = async (res) => {
  //   const textSelector = await page.waitForSelector(
 //      "text/Customize and automate"
 //    );
-  //  const fullTitle = await textSelector.evaluate((el) => el.textContent);
+   const fullTitle = await searchResultsSelector2.evaluate((el) => el.getAttribute("href"));
 
     // Print the full title
     const logStatement = `The title of this blog post is ${fullTitle}`;

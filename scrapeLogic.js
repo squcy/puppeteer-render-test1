@@ -44,6 +44,7 @@ const scrapeLogic = async (res) => {
     const logStatement = `The title of this blog post is ${fullTitle}`;
     console.log(logStatement);
     res.send(logStatement);
+    page.setDefaultNavigationTimeout(70000)
   } catch (e) {
     console.error(e);
     res.send(`Something went wrong while running Puppeteer: ${e}`);

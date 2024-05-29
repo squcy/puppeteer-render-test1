@@ -30,8 +30,8 @@ const scrapeLogic = async (res) => {
     await page.waitForSelector(searchResultSelector);
     await page.click(searchResultSelector);
 
- //   const searchResultSelector2 = "div > div > div > div > a";
-  //  await page.waitForSelector(searchResultSelector2 , {timeout: 120000} );
+    let searchResultSelector2 = "div > div > div > div > a";
+    await page.waitForSelector(searchResultSelector2 , {timeout: 120000} );
     //await page.click(searchResultSelector);
 
     // Locate the full title with a unique string
@@ -41,7 +41,7 @@ const scrapeLogic = async (res) => {
   // const fullTitle = await searchResultSelector.evaluate((el) => el.textContent);
 
 let x =  await page.evaluate(() => {
- const element = document.querySelector("div:nth-child(2) > div > div.w-28.p-2.mx-2.my-2.text-center.border.rounded-lg.cursor-pointer.bit64 > div:nth-child(2)").textContent
+ const element = document.querySelector("div > div > div > div > a").getAttribute("href")
  return element
 });
 

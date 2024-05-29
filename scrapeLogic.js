@@ -47,7 +47,7 @@ let x =  await page.evaluate(() => {
 
     
     // Print the full title
-    const logStatement = `The title of this blog post is`;
+    const logStatement = `The title of this blog post is ${x}`;
     console.log(logStatement);
     res.send(logStatement);
   

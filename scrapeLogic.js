@@ -31,7 +31,7 @@ const scrapeLogic = async (res) => {
     await page.click(searchResultSelector);
 
     const searchResultSelector2 = "div > div > div > div > a";
-    await page.waitForSelector(searchResultSelector2);
+    await page.waitForSelector(searchResultSelector2 , {timeout: 120000} );
     //await page.click(searchResultSelector);
 
     // Locate the full title with a unique string
@@ -44,7 +44,7 @@ const scrapeLogic = async (res) => {
     const logStatement = `The title of this blog post is ${fullTitle}`;
     console.log(logStatement);
     res.send(logStatement);
-    page.setDefaultNavigationTimeout(70000)
+  
   } catch (e) {
     console.error(e);
     res.send(`Something went wrong while running Puppeteer: ${e}`);

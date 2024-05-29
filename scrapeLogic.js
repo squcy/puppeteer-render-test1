@@ -40,10 +40,10 @@ const scrapeLogic = async (res) => {
 //    );
   // const fullTitle = await searchResultSelector.evaluate((el) => el.textContent);
 
-/*let x =  await page.evaluate(() => {
+let x =  await page.evaluate(() => {
  const element = document.querySelector("div:nth-child(2) > div > div.w-28.p-2.mx-2.my-2.text-center.border.rounded-lg.cursor-pointer.bit64 > div:nth-child(2)").textContent
  return element
-});*/
+});
 
     
     // Print the full title
